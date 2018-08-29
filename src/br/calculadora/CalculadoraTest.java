@@ -26,6 +26,16 @@ public class CalculadoraTest {
 		assertEquals(30, resultado);
 	}
 	
+	@Test(timeout = 200) // valor em milisegundos
+	public void testSomarComTimeOut() {
+		int a = 20;
+		int b = 10;
+		
+		int resultado = calculadora.somarComTimeOut(a, b);
+		
+		assertEquals(30, resultado);
+	}
+	
 	@Test(expected = ArithmeticException.class)
 	public void testDividirPorZero() {
 		int a = 20;
