@@ -1,3 +1,4 @@
+package br.calculadora;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
@@ -26,7 +27,7 @@ public class CalculadoraTest {
 	}
 	
 	@Test(expected = ArithmeticException.class)
-	public void testDividir() {
+	public void testDividirPorZero() {
 		int a = 20;
 		int b = 0;
 		
