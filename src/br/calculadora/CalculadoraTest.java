@@ -2,8 +2,13 @@ package br.calculadora;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
+// anotacao que ordena ascendente por nome os metodos
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//isso nao e considerado uma boa pratica , pois , a ordenacao tem que ser independente entre os metodos testados
 public class CalculadoraTest {
 
 	Calculadora calculadora;
@@ -42,5 +47,23 @@ public class CalculadoraTest {
 		int b = 0;
 		
 		calculadora.dividir(a, b);
+	}
+
+	@Test
+	public void testSomarNumerosNegativos() {
+		int a = -3;
+		int b = -10;
+		int resultado = calculadora.somar(a, b);
+		
+		assertEquals(-13, resultado);
+	}
+
+	@Test
+	public void testDividir() {
+		int a = 20;
+		int b = 2;
+		int resultado = calculadora.dividir(a, b);
+		
+		assertEquals(10, resultado);
 	}
 }
